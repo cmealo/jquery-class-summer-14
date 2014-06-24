@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<style type="text/css">
+	body {
+		font-family: sans-serif;
+		color: #484851;
+		font-size: 1.5em;
+		background-color: #CCFFCC;
+	}
+</style>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+
+<script type="text/javascript">
+function insertnow( )
+{
+$("#inputfirstname").html($("#firstname").val());
+$("#inputfavecolor").html($("#favecolor").val());
+$("#inputfavefood").html($("#favefood").val());
+}
+</script>
+</head>
+<body>
+<img src="http://www.santafemusicvideos.com/rainbow_png_2.png">
+<p>Please fill the boxes Below:</p>
+<form id="christie-form">
+First Name: <input type = "text" name="firstname" id="firstname"></input>
+Favorite Color: <input type = "text" name="favecolor" id="favecolor"></input>
+Favorite Food: <input type = "text" name="favefood" id="favefood"></input>
+<br>
+Click the Magic Button <input type = "button" name="magicbutton" value="Magic Button!" id="magicbutton" onclick="insertnow()"></input>
+</form>
+
+<div>
+<p>
+Hi name is <b><span id="inputfirstname"></span></b> and I like to eat <i><span id="inputfavecolor"></span></i> <u><span id="inputfavefood"></span></u>
+</p>
+</div>
+
+</body>
+
+</html>
