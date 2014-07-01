@@ -1,0 +1,80 @@
+ <!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title></title>
+	
+   <link rel="stylesheet" type="text/css" href="">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<style>
+
+body{
+background-color: #212131;
+}
+
+h1{
+    font-family: sans-serif;
+    color: #ffffff;
+    text-align: center;
+}
+
+div {
+    margin: auto;
+    padding: 2em;
+    width: 50%;
+}
+
+</style>
+
+    <script>
+
+
+    $(document).ready(function () {
+            $("#photo-box").children().hide();
+            christieSlideShow();
+        });
+
+
+/* //This works but I kinda found it somewhere...
+
+        $(function(){
+        $('#photo-box img:gt(0)').hide();
+        setInterval(function(){
+        $('#photo-box :first-child').fadeOut()
+         .next('img').fadeIn()
+         .end().appendTo('#photo-box');}, 
+        3000);
+        });
+
+*/
+
+//Was hoping to get this to work... issues with $(this) I'm a little confused what happens when its nested... also clearly issues with the way I tried to do it... 
+
+var christieSlideShow = function(){
+    
+        $("img.active-slide").fadeIn(1000).fadeOut(1000,function(){
+            $(this).next().addClass("active-slide");
+            $(this).removeClass("active-slide");
+            $(this).stop;
+            setInterval(christieSlideShow, 2005);
+        });
+        };
+
+
+    </script>
+
+
+</head>
+<body>
+<h1>Slideshow Fail :(</h1>
+      <div id="photo-box">
+            <img class="active-slide first-slide" id="beach-drink" alt="Beach Drink" src="images/beach-drink.jpg" title="Beach Drink" />
+            <img id="dog" alt="Hot Dog" src="images/dog.jpg" title="Hot Dog" />
+            <img id="friend" alt="Friend" src="images/friend.jpg" title="Friend" />
+            <img id="my-brain" alt="My Brain" src="images/my-brain.jpg" title="My Brain" />
+            <img id="sunset" alt="Sunset" src="images/sunset.jpg" title="Sunset" />
+            <img id="vacation" alt="Vacation" src="images/vacation.jpg" title="Vacation" />
+            <img id="visualized" alt="Visualized" src="images/visualized.jpg" title="Visualized" />
+       </div>
+</body>
+</html>
